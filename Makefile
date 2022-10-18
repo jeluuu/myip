@@ -1,6 +1,10 @@
+REBAR_GIT_CLONE_OPTIONS += --depth 1
+export REBAR_GIT_CLONE_OPTIONS
+
 .PHONY: default all build clean compile release shell
 
-rebar='rebar3'
+
+REBAR = rebar3
 
 default: compile
 all: clean compile test
@@ -18,6 +22,20 @@ upgrade:
 	@$(rebar) upgrade --all
 release:
 	@$(rebar) release
+cover:
+	$(REBAR) cover
 tar:
 	@$(rebar) as prod tar
 
+distclean:
+	@rm -rf _build
+	@rm -f data/app.*.config data/vm.*.args rebar.lock
+
+CUTTLEFISH_SCRIPT = _build/default/lib/cuttlefish/cuttlefish
+
+$(CUTTLEFISH_SCRIPT):
+	@${REBAR} get-deps
+	@if [ ! -f cuttlefish ]; then make -C _build/default/lib/cuttlefish; fi
+
+app.config: $(CUTTLEFISH_SCRIPT) etc/myip.config
+	$(verbose) $(CUTTLEFISH_SCRIPT) -l info -e etc/ -c etc/myip.config 
