@@ -12,7 +12,8 @@
 -export([start/2, stop/1]).
 
 start(_StartType, _StartArgs) ->
-    myip_sup:start_link().
+    {ok, Sup} = myip_sup:start_link(),
+    
 
 stop(_State) ->
     ok.

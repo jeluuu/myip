@@ -48,5 +48,5 @@ do_get_my_ip(#{headers := Headers
                ,request := Req} = _) ->
   Ip = maps:get(<<"x-real-ip">>, Headers, <<"not-available">>),
   Res = Req#{ip => Ip},
-  io:format("~n --daaaaaaaaaaaaaaaaaaaaaaaaaaaaaad- ~n"),
+  % io:format("~n --daaaaaaaaaaaaaaaaaaaaaaaaaaaaaad- ~n"),
   {ok, Res}.
