@@ -1,0 +1,10 @@
+{application,myip,
+             [{description,"An OTP application"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {mod,{myip_app,[]}},
+              {applications,[kernel,stdlib,bifrost,lager]},
+              {env,[]},
+              {modules,[myip_api,myip_app,myip_sup]},
+              {licenses,["Apache 2.0"]},
+              {links,[]}]}.

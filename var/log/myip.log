@@ -1,0 +1,3 @@
+2022-10-11 18:15:06.963 [debug] <0.269.0>@lager_handler_watcher:Undefined:127 Lager installed handler error_logger_lager_h into error_logger
+2022-10-11 18:15:07.325 [info] <0.280.0>@bifrost_web:init:{76,3} Bifrost opened on port : {6005}
+2022-10-11 18:15:07.443 [debug] <0.261.0>@lager_handler_watcher:Undefined:127 Lager installed handler lager_backend_throttle into lager_event
