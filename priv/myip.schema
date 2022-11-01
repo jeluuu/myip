@@ -1,1 +1,3 @@
-
+{mapping, "myip.listener.bifrost", "myip.listeners", [
+  {datatype, [integer, ip]}
+]}.
