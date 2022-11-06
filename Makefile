@@ -67,4 +67,4 @@ $(CUTTLEFISH_SCRIPT):
 	@if [ ! -f cuttlefish ]; then make -C _build/default/lib/cuttlefish; fi
 
 app.config: $(CUTTLEFISH_SCRIPT) etc/myip.config
-	$(verbose) $(CUTTLEFISH_SCRIPT) -l info -e etc/ -c etc/myip.config 
+	$(verbose) $(CUTTLEFISH_SCRIPT) -l info -e etc/ -c etc/myip.config -i priv/myip.schema
